@@ -11,4 +11,23 @@
 
 import Foundation
 
+// variadic parameter
+// Approach 1
+func addNumbers (numbers: Int ...) {
+    
+    var initial = 0
+    for i in numbers {
+        initial += i
+    }
+    print("The sum is \(initial)")
+}
+
+addNumbers(numbers: 1,2,3,4,5,6,7,8,9,10)
+
+// Approach 2
+func sum(integers: Int ...) {
+    print(integers.reduce(0, +))
+}
+sum(integers: 1,2,3,4,5,6,7,8,9,10)
+
 //: [Next](@next)
