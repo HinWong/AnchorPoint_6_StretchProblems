@@ -16,4 +16,48 @@
 
 import UIKit
 
+//func gameOfThrees(input: Int) {
+//
+//    if input.isMultiple(of: 3) {
+//        var number = input
+//        input / 3
+//
+//    } else {
+//       var sum =  input + 1
+//        if sum % 3 != 0 {
+//            return
+//        } else {
+//            input - 1
+//            if input.isMultiple(of: 3) {
+//                input / 3
+//            }
+//        }
+//    }
+//}
+//
+//gameOfThrees(input: 30)
+
+func playGameOfThreesWith(number: Int) -> [Int] {
+    var modifiedNumber: Int = number
+    var numberArray: [Int] = [number]
+    
+    while modifiedNumber > 1 {
+        if modifiedNumber % 3 == 0 {
+            numberArray.append(modifiedNumber / 3)
+            modifiedNumber /= 3
+        } else if modifiedNumber % 3 == 1 {
+            modifiedNumber = modifiedNumber - 1
+            numberArray.append(modifiedNumber / 3)
+            modifiedNumber /= 3
+        } else {
+            modifiedNumber = modifiedNumber + 1
+            numberArray.append(modifiedNumber / 3)
+            modifiedNumber /= 3
+        }
+    }
+    return numberArray
+}
+
+playGameOfThreesWith(number: 45)
+
 //: [Next](@next)
